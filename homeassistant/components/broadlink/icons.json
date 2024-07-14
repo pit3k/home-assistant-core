@@ -1,0 +1,19 @@
+{
+  "entity": {
+    "fan": {
+      "lifaair": {
+        "state_attributes": {
+          "preset_mode": {
+            "state": {
+              "auto": "mdi:fan-auto",
+              "night": "mdi:weather-night",
+              "turbo": "mdi:turbine",
+              "anti_allergy": "mdi:flower-pollen",
+              "manual": "mdi:fan"
+            }
+          }
+        }
+      }
+    }
+  }
+}
