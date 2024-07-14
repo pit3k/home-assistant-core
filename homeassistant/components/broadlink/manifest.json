@@ -1,6 +1,7 @@
 {
   "domain": "broadlink",
   "name": "Broadlink",
+  "version": "1.0.0-lifaair",
   "codeowners": ["@danielhiversen", "@felipediel", "@L-I-Am", "@eifinger"],
   "config_flow": true,
   "dhcp": [
@@ -38,5 +39,5 @@
   "documentation": "https://www.home-assistant.io/integrations/broadlink",
   "iot_class": "local_polling",
   "loggers": ["broadlink"],
-  "requirements": ["broadlink==0.19.0"]
+  "requirements": ["broadlink @ git+https://github.com/pit3k/python-broadlink.git@master"]
 }
