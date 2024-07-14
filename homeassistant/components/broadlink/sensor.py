@@ -99,6 +99,18 @@ SENSOR_TYPES: tuple[SensorEntityDescription, ...] = (
         device_class=SensorDeviceClass.ENERGY,
         state_class=SensorStateClass.TOTAL_INCREASING,
     ),
+    SensorEntityDescription(
+        key="tvoc",
+        native_unit_of_measurement=UnitOfDensity.MICROGRAMS_PER_CUBIC_METER,
+        device_class=SensorDeviceClass.VOLATILE_ORGANIC_COMPOUNDS,
+        state_class=SensorStateClass.MEASUREMENT,
+    ),
+    SensorEntityDescription(
+        key="co2",
+        native_unit_of_measurement=UnitOfRatio.PARTS_PER_MILLION,
+        device_class=SensorDeviceClass.CO2,
+        state_class=SensorStateClass.MEASUREMENT,
+    ),
 )
 
 

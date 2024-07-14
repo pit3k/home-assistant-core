@@ -32,6 +32,7 @@ DOMAINS_AND_TYPES = {
         "SP3S",
         "SP4",
         "SP4B",
+        "LIFAAIR",
     },
     Platform.SWITCH: {
         "BG1",
@@ -52,6 +53,7 @@ DOMAINS_AND_TYPES = {
         "SP4B",
     },
     Platform.TIME: {"HYS"},
+    Platform.FAN: {"LIFAAIR"},
 }
 DEVICE_TYPES = set.union(*DOMAINS_AND_TYPES.values())
 
