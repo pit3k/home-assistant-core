@@ -1,6 +1,7 @@
 {
   "domain": "blebox",
   "name": "BleBox devices",
+  "version": "1.0.0-pit3k",
   "codeowners": ["@bbx-a", "@swistakm"],
   "config_flow": true,
   "documentation": "https://www.home-assistant.io/integrations/blebox",
