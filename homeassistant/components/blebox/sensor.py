@@ -1,5 +1,7 @@
 """BleBox sensor entities."""
 
+from datetime import timedelta
+
 import blebox_uniapi.sensor
 
 from homeassistant.components.sensor import (
@@ -27,6 +29,8 @@ from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
 from . import BleBoxConfigEntry
 from .entity import BleBoxEntity
+
+SCAN_INTERVAL = timedelta(seconds=5)
 
 SENSOR_TYPES = (
     SensorEntityDescription(
