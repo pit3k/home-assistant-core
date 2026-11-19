@@ -52,7 +52,12 @@ class LifaAirPurifierFan(BroadlinkEntity, FanEntity):
     _attr_has_entity_name = True
     _attr_name = None
     _attr_translation_key = "lifaair"
-    _attr_supported_features = FanEntityFeature.PRESET_MODE | FanEntityFeature.SET_SPEED
+    _attr_supported_features = (
+        FanEntityFeature.PRESET_MODE
+        | FanEntityFeature.SET_SPEED
+        | FanEntityFeature.TURN_ON
+        | FanEntityFeature.TURN_OFF
+    )
     _attr_preset_modes = [
         _fan_mode_to_name(mode)
         for mode in lifaair.FanMode
@@ -89,10 +94,7 @@ class LifaAirPurifierFan(BroadlinkEntity, FanEntity):
         fan_mode = _fan_name_to_mode(preset_mode)
         if fan_mode == lifaair.FanMode.MANUAL:
             # The API enters MANUAL mode by setting a speed, not by setting a mode.
-            percentage = self.percentage
-            await self.async_set_percentage(
-                percentage if percentage is not None else 50
-            )
+            await self.async_set_percentage(self.percentage or 50)
         else:
             was_set_to_auto = await self._async_turn_on_if_needed()
             if not (was_set_to_auto and fan_mode == lifaair.FanMode.AUTO):
