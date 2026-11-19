@@ -258,6 +258,7 @@ class BroadlinkThermostatUpdateManager(BroadlinkUpdateManager[blk.hysen]):
 class BroadlinkLIFAAIRUpdateManager(BroadlinkUpdateManager[blk.lifaair]):
     """Manages updates for LIFAair."""
 
+    @override
     async def async_fetch_data(self) -> dict[str, Any]:
         """Fetch data from the device."""
         return await self.device.async_request(self.device.api.get_state)
